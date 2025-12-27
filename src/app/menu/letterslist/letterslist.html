@@ -1,0 +1,63 @@
+<div class="layout">
+  <!-- Main content -->
+  <main class="content">
+    <div class="pine-branch large-desktop-only"></div>
+
+    <h1 class="delivery-title">Delivery list</h1>
+
+    <div class="table-wrapper">
+      <table class="delivery-table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Wishes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let child of children"
+            [class.naughty]="child.naughty"
+            [class.hide-on-mobile]="child.naughty"
+          >
+            <td>{{ child.firstName }}</td>
+            <td>{{ child.lastName }}</td>
+            <td>{{ child.address }}</td>
+            <td class="truncate">{{ child.wishes }}</td>
+          </tr>
+
+          <tr class="dotted-row">
+            <td></td>
+            <td></td>
+            <td><div class="dotted-line"></div></td>
+            <td></td>
+          </tr>
+
+          <tr class="last-row">
+            <td>{{ extraChild.firstName }}</td>
+            <td>{{ extraChild.lastName }}</td>
+            <td>{{ extraChild.address }}</td>
+            <td>{{ extraChild.wishes }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination">
+      <button class="page-arrow">&laquo;</button>
+
+      <button
+        *ngFor="let p of pages"
+        class="page"
+        [class.current]="p === currentPage"
+        [class.hidden-middle]="p > 5 && p < 37 && p !== currentPage"
+        (click)="goToPage(p)"
+      >
+        {{ p }}
+      </button>
+
+      <button class="page-arrow">&raquo;</button>
+    </div>
+  </main>
+</div>

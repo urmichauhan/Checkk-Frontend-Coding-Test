@@ -1,0 +1,138 @@
+<div class="factory-wrapper">
+  <!-- Header row -->
+  <div class="factory-header">
+    <div>
+      <h1 class="factory-title">Toys Factory</h1>
+      <p class="factory-subtitle">
+        Live overview of Santa’s workshop – toy production, wrapping, and loading.
+      </p>
+    </div>
+
+    <div class="factory-status-badge">
+      <span class="dot dot-online"></span>
+      Workshop online
+    </div>
+  </div>
+
+  <!-- Top cards: stats -->
+  <section class="factory-stats">
+    <div class="stat-card">
+      <div class="stat-label">Toys built today</div>
+      <div class="stat-value">4,382</div>
+      <div class="stat-footer">
+        <span class="trend-up">▲ +12%</span>
+        vs yesterday
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Elves on duty</div>
+      <div class="stat-value">128</div>
+      <div class="stat-footer">
+        <span class="badge badge-green">All shifts staffed</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Quality score</div>
+      <div class="stat-value">98%</div>
+      <div class="stat-footer">
+        <span class="badge badge-gold">Premium gifts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main responsive layout -->
+  <section class="factory-main">
+    <!-- Left: assembly lanes -->
+    <div class="factory-lanes">
+      <h2 class="section-title">Assembly lanes</h2>
+
+      <div class="lane-card" *ngFor="let lane of lanes">
+        <div class="lane-header">
+          <div class="lane-icon" [style.background]="lane.color">
+            <mat-icon class="lane-mat-icon">
+              {{ iconForLane(lane.name) }}
+            </mat-icon>
+          </div>
+
+          <div>
+            <div class="lane-name">{{ lane.name }}</div>
+            <div class="lane-meta">{{ lane.description }}</div>
+          </div>
+
+          <span
+            class="lane-badge badge"
+            [ngClass]="{
+              'badge-green': lane.status === 'On track',
+              'badge-red': lane.status === 'Delayed',
+              'badge-amber': lane.status === 'Catching up'
+            }"
+          >
+            {{ lane.status }}
+          </span>
+        </div>
+
+        <div class="lane-body">
+          <div class="lane-row">
+            <span>Per hour</span>
+            <span>{{ lane.perHour }} toys</span>
+          </div>
+          <div class="lane-row">
+            <span>Current queue</span>
+            <span>{{ lane.queue }} orders</span>
+          </div>
+          <div class="lane-progress">
+            <div class="lane-progress-fill" [style.width.%]="lane.progress"></div>
+          </div>
+          <div class="lane-progress-label">
+            {{ lane.progress }}% of nightly quota
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: live queue + snow globe -->
+    <div class="factory-side">
+      <!-- Live priority queue -->
+      <div class="queue-card">
+        <h2 class="section-title">Priority gifts queue</h2>
+
+        <div class="queue-list">
+          <div class="queue-item" *ngFor="let item of priorityQueue">
+            <div>
+              <div class="queue-child">
+                {{ item.child }}
+                <span class="queue-country">• {{ item.country }}</span>
+              </div>
+              <div class="queue-wish">{{ item.wish }}</div>
+            </div>
+
+            <div class="queue-meta">
+              <span class="queue-priority">★ {{ item.priority }}</span>
+              <span class="queue-due">ETA {{ item.eta }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Snow globe factory mood -->
+      <div class="globe-card">
+        <div class="globe">
+          <div class="globe-snowflake" *ngFor="let flake of snowflakes"></div>
+          <div class="globe-ground"></div>
+          <div class="globe-house">
+            <div class="globe-roof"></div>
+            <div class="globe-door"></div>
+          </div>
+          <div class="globe-tree globe-tree-left"></div>
+          <div class="globe-tree globe-tree-right"></div>
+        </div>
+        <div class="globe-caption">
+          Workshop mood:
+          <span class="globe-caption-strong">Cozy &amp; productive</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

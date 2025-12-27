@@ -1,0 +1,209 @@
+.mc-page {
+  position: relative;
+  min-height: calc(100vh - 4rem);
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 60%);
+  overflow: hidden;
+  color: #f9fafb;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* snow layer */
+
+.mc-snow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.mc-snowflake {
+  position: absolute;
+  top: -10px;
+  width: 4px;
+  height: 4px;
+  background: #f9fafb;
+  border-radius: 999px;
+  opacity: 0.8;
+  animation: mc-snow 8s linear infinite;
+}
+
+/* different starting positions / speeds */
+.mc-snowflake:nth-child(odd) {
+  width: 3px;
+  height: 3px;
+  animation-duration: 10s;
+  opacity: 0.6;
+}
+
+.mc-snowflake:nth-child(3n) {
+  width: 5px;
+  height: 5px;
+  animation-duration: 7s;
+}
+
+/* distribute across screen */
+.mc-snowflake:nth-child(1) { left: 3%; }
+.mc-snowflake:nth-child(2) { left: 10%; }
+.mc-snowflake:nth-child(3) { left: 18%; }
+.mc-snowflake:nth-child(4) { left: 25%; }
+.mc-snowflake:nth-child(5) { left: 32%; }
+.mc-snowflake:nth-child(6) { left: 40%; }
+.mc-snowflake:nth-child(7) { left: 47%; }
+.mc-snowflake:nth-child(8) { left: 55%; }
+.mc-snowflake:nth-child(9) { left: 62%; }
+.mc-snowflake:nth-child(10) { left: 70%; }
+.mc-snowflake:nth-child(11) { left: 78%; }
+.mc-snowflake:nth-child(12) { left: 86%; }
+.mc-snowflake:nth-child(13) { left: 93%; }
+/* the rest will reuse these positions */
+
+@keyframes mc-snow {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-20px, 110vh, 0);
+  }
+}
+
+/* card */
+
+.mc-card {
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+  width: 100%;
+  padding: 2.5rem 2rem 2.1rem;
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at top left, #f97316 0, #b91c1c 30%, #111827 85%);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.9),
+    0 0 40px rgba(251, 113, 133, 0.4);
+  border: 1px solid rgba(248, 250, 252, 0.15);
+  text-align: center;
+}
+
+/* badge */
+
+.mc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: rgba(15, 23, 42, 0.75);
+  color: #e5e7eb;
+  margin-bottom: 1rem;
+}
+
+/* title */
+
+.mc-title {
+  margin: 0;
+  font-family: 'Reenie Beanie', 'Pacifico', cursive;
+  font-size: 3rem;
+  line-height: 1.1;
+  color: #fef3c7;
+  text-shadow: 0 2px 6px rgba(15, 23, 42, 0.9);
+  animation: mc-glow 2.4s ease-in-out infinite alternate;
+}
+
+.mc-title span {
+  color: #facc15;
+}
+
+@keyframes mc-glow {
+  0% {
+    text-shadow:
+      0 0 6px rgba(250, 204, 21, 0.7),
+      0 0 18px rgba(248, 113, 113, 0.65);
+  }
+  100% {
+    text-shadow:
+      0 0 12px rgba(250, 204, 21, 1),
+      0 0 30px rgba(248, 113, 113, 1);
+  }
+}
+
+/* text */
+
+.mc-text {
+  margin: 1rem auto 1.8rem;
+  max-width: 32rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #f9fafb;
+  opacity: 0.95;
+}
+
+/* button */
+
+.mc-button {
+  padding: 0.6rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #111827;
+  background: linear-gradient(90deg, #facc15, #f97316);
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.8),
+    0 0 18px rgba(250, 204, 21, 0.9);
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    filter 0.15s ease-out;
+}
+
+.mc-button:hover {
+  transform: translateY(-1px) scale(1.03);
+  filter: brightness(1.05);
+}
+
+.mc-button:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.8),
+    0 0 10px rgba(250, 204, 21, 0.6);
+}
+
+/* footer */
+
+.mc-footer {
+  margin-top: 1.4rem;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+  opacity: 0.9;
+}
+
+/* responsive */
+
+@media (max-width: 640px) {
+  .mc-page {
+    padding: 1.5rem 1rem;
+    min-height: 100vh;
+  }
+
+  .mc-card {
+    padding: 2rem 1.4rem 1.8rem;
+  }
+
+  .mc-title {
+    font-size: 2.3rem;
+  }
+
+  .mc-text {
+    font-size: 0.86rem;
+  }
+}

@@ -1,0 +1,18 @@
+<app-topbar></app-topbar>
+
+<div class="flex min-h-screen">
+  <app-sidebar></app-sidebar>
+
+  <!-- Pine branch -->
+   <div class="mb-20">
+     <img src="assets/images/pine_branch.png" class="hidden lg:block absolute right-6 w-48" />
+   </div>
+   
+  <main class="flex-1 p-6 mt-20">
+    <!-- <app-toy-factory></app-toy-factory>
+    <app-letters-list></app-letters-list>
+     <app-legal></app-legal>
+     <app-disonnect></app-disonnect> -->
+     <router-outlet></router-outlet>
+  </main>
+</div>

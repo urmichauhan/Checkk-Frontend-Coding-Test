@@ -1,0 +1,115 @@
+<!-- <aside class="hidden md:flex w-[220px] min-h-screen bg-[#0f5a2f] text-white flex-col items-center py-6">
+
+  <img src="assets/images/santa.png" class="w-14 mb-2" />
+  <div class="text-red-santa font-semibold text-lg all-cursive">Santa Inc.</div>
+  <div class="text-xs opacity-70 mb-8">v4.1.2</div>
+
+  <nav class="w-full px-6 space-y-4 text-sm">
+
+    <button class="flex items-center gap-3 w-full text-left">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <path d="M3 9h18M9 21V9"/>
+      </svg>
+      <span>Toys Factory</span>
+    </button>
+
+    <button class="flex items-center gap-3 w-full text-left font-semibold bg-white/10 px-2 py-1 rounded">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path d="M3 7h13v10H3z"/>
+        <path d="M16 10h4l1 2v5h-5z"/>
+        <circle cx="7.5" cy="17.5" r="1.5"/>
+        <circle cx="17.5" cy="17.5" r="1.5"/>
+      </svg>
+      <span>Delivery</span>
+    </button>
+
+    <button class="flex items-center gap-3 w-full text-left">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24">
+        <path d="M12 3v18"/>
+        <path d="M5 7h14"/>
+        <path d="M7 7l-2 4h14l-2-4"/>
+      </svg>
+      <span>Legal</span>
+    </button>
+
+  </nav>
+
+  <div class="mt-auto text-xs opacity-60">
+    All rights reserved
+  </div>
+</aside> -->
+
+<!-- Desktop -->
+<aside class="sidebar desktop-only min-h-screen">
+  <div class="sidebar-top">
+    <div class="santa-logo">
+      <div class="santa-avatar large-desktop-only">
+        <img src="assets/images/santa.png" class="w-16 mb-2" />
+      </div>
+
+      <div class="santa-text">
+        <div class="santa-inc text-red-santa">Santa Inc.</div>
+        <div class="version">V4.1.2</div>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <div class="menu-item" routerLink="/toysfactory" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="menu-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none"
+            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <!-- controller body -->
+            <path
+              d="M4.5 8.5c-.9.2-1.6.8-2 1.6C2 11.3 2 13.4 2.3 15c.3 1.6.7 2.8 1.3 3.6.5.7 1.2 1.2 2 1.3.9.1 1.7-.3 2.3-.9.5-.5 1-1.1 1.5-1.7.6-.7 1.2-1.3 1.9-1.3s1.3.6 1.9 1.3c.5.6 1 1.2 1.5 1.7.6.6 1.4 1 2.3.9.8-.1 1.5-.6 2-1.3.6-.8 1-2 1.3-3.6.3-1.6.3-3.7-.2-4.9-.4-.8-1.1-1.4-2-1.6L15 7H9l-4.5 1.5Z" />
+            <!-- d‑pad -->
+            <path d="M8.2 11H7v1.2H5.8V13H7v1.2H8.2V13H9.4v-1.2H8.2V11Z" />
+            <!-- buttons -->
+            <circle cx="15.8" cy="11.3" r="0.7" />
+            <circle cx="17.6" cy="12.1" r="0.7" />
+            <circle cx="15" cy="13" r="0.7" />
+            <circle cx="17" cy="10.3" r="0.7" />
+          </svg>
+
+        </span>
+        <span class="menu-label">Toys Factory</span>
+      </div>
+      <div class="menu-item" routerLink="/delivery" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="menu-icon">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 7h13v10H3z" />
+            <path d="M16 10h4l1 2v5h-5z" />
+            <circle cx="7.5" cy="17.5" r="1.5" />
+            <circle cx="17.5" cy="17.5" r="1.5" />
+          </svg>
+        </span>
+        <span class="menu-label">Delivery</span>
+      </div>
+      <div class="menu-item" routerLink="/legal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="menu-icon">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 3v18" />
+            <path d="M5 7h14" />
+            <path d="M7 7l-2 4h14l-2-4" />
+          </svg>
+        </span>
+        <span class="menu-label">Legal</span>
+      </div>
+      <div class="menu-item" routerLink="/disconnect" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="menu-icon">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v10"></path>
+            <path d="M5.5 7.5a7 7 0 1 0 13 0"></path>
+          </svg>
+        </span>
+        <span class="menu-label" >Disconnect</span>
+      </div>
+    </nav>
+  </div>
+
+  <div class="sidebar-bottom">All rights reserved</div>
+</aside>
