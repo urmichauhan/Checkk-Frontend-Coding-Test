@@ -20,8 +20,8 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-                "src/favicon.ico",
-                "src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/material-theme.scss",
@@ -53,6 +53,12 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "github": {
+              "outputPath": "dist/gh-pages",
+              "baseHref": "/Checkk-Frontend-Coding-Test/",
+              "optimization": true,
+              "ssr": false
             }
           },
           "defaultConfiguration": "production"
