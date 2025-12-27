@@ -57,8 +57,7 @@
             "github": {
               "outputPath": "dist/gh-pages",
               "baseHref": "/Checkk-Frontend-Coding-Test/",
-              "optimization": true,
-              "ssr": false
+              "optimization": true
             }
           },
           "defaultConfiguration": "production"

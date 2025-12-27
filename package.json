@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:frontend-santa-inc": "node dist/frontend-santa-inc/server/server.mjs"
+    "serve:ssr:frontend-santa-inc": "node dist/frontend-santa-inc/server/server.mjs",
+    "build:github": "ng build --configuration github && node rename-index.js"
   },
   "prettier": {
     "printWidth": 100,
